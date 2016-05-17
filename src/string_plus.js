@@ -22,4 +22,15 @@ export class StringPlus {
             this.replaceNthChar(this.str.length - 1 - i, tempChar);
         }
     }
+    
+    isPalindrome() {
+        this.reverse();
+        const reversed = this.str;
+        this.reverse();
+        if(reversed == this.str) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
