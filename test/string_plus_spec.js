@@ -15,6 +15,21 @@ describe("StringPlus", () => {
         });
     });
     
+    describe("replaceNthChar()", () => {
+        const sp = new StringPlus('test string');
+        
+        it('replaces n-th char', () => {
+            sp.replaceNthChar(0, 'T');
+            expect(sp.str).to.eq('Test string');
+            sp.replaceNthChar(4, '!');
+            expect(sp.str).to.eq('Test!string');
+        });
+        
+        it('does not return anything', () => {
+            expect(sp.replaceNthChar(0, 'A')).to.eq(undefined);
+        });
+    });
+    
     describe("reverse()", () => {
         it('reverses str', () => {
             const sp = new StringPlus('parameter');

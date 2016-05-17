@@ -1,13 +1,25 @@
 export class StringPlus {
-    constructor(initial_string) {
-        this.str = initial_string;
+    constructor(initialString) {
+        this.str = initialString;
+    }
+    
+    replaceNthChar(n, newChar) {
+        let tempStr = "";
+        for(let i = 0; i < this.str.length; i++) {
+            if(i != n) {
+                tempStr = tempStr + this.str[i];
+            } else {
+                tempStr = tempStr + newChar;
+            }
+        }
+        this.str = tempStr;
     }
     
     reverse() {
-        let temp_str = "";
-        for(let i = this.str.length - 1; i >= 0; i--) {
-            temp_str = `${temp_str}${this.str[i]}`;
+        for(let i = 0; i < this.str.length/2; i++) {
+            const tempChar = this.str[i];
+            this.replaceNthChar(i, this.str[this.str.length - 1 - i]);
+            this.replaceNthChar(this.str.length - 1 - i, tempChar);
         }
-        this.str = temp_str;
     }
 }
