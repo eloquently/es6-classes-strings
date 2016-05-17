@@ -1,1 +1,1 @@
-Repository for [this guide]('http://eloquent.ly/guides/es6-classes-strings-state').
+Repository for [this guide](http://eloquent.ly/guides/es6-classes-strings-state).
